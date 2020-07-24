@@ -89,6 +89,15 @@ INSERT()
     sleep 1s
     sed -i "/<ul id='post'>/a <li><a href="post/${_ano}/${_mes}/${urlName}.html">$postName</a></li>" index.html
 }
+
+GIT()
+{
+  git add *
+  read -p "Comentário das alterações: " comment
+  git commit -m "$comment"
+  git push
+}
 #======================= INICIO
 POST
 INSERT
+GIT
