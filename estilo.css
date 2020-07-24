@@ -1,0 +1,28 @@
+body{
+	max-width:60em;
+	margin:auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1em;
+}
+
+header{padding: 0.5%;}
+
+nav.top{
+	overflow: hidden;
+}
+
+nav.top a{
+	float: left;
+  	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+nav.top a:hover{
+	text-decoration: underline;
+}
+
+footer{
+	margin-top: 2%;
+}
