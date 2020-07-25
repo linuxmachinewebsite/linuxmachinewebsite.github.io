@@ -5,22 +5,43 @@
 
 body{
    line-height: 1.6;
-   background-color: #fffff8;
+   background-color: #ecf0f1;
    color: #161616;
-   max-width: 60em;
+   max-width: 56em;
    margin-left: auto;
    margin-right: auto;
    font-family: 'LibreBaskerville-Regular';
-   font-size: 16px;
+   font-size: 17px;
 }
-header{padding: 0.9%; background-color: #ffad00;}
-header>nav{ font-size: 14px; font-family: 'LibreBaskerville-Regular';}
-nav>b.logo{padding-right: 1%;}
-footer{margin-top: 8%; color: #989898;}
 div.box{ margin: 2%;}
-nav>a{ color: black; }
-nav>a:visited{ color: black; }
+#artigos{
+  margin-top: 3%;
+  padding: 3%; 
+  box-shadow: 1px 3px 8px 1px #bdc3c7;
+  border-radius: 3px;
+  background-color: #ffffff;
+ }
+
+/* Cabeçalho */
+header{padding: 0.9%; background-color: #19b5fe; box-shadow: 1px 3px 8px 1px #bdc3c7; border-radius: 2px;}
+header>nav{ font-size: 16px; font-family: 'LibreBaskerville-Regular';}
+nav>b.logo{color: #161616; padding-right: 1%;}
+nav>b.logo>a:visited{color: #161616;}
+
+/* LINKS MENU Cabeçãlho */
+nav>a{ color: #161616; }
+nav>a:visited{ color: #161616; }
+
+/* Data postagem */
+small{background-color: #ecf0f1; color: #19b5fe; padding: 0.1%; margin-left: 1%;}
+
+/* Rodapé */
+footer{margin-top: 4%; color: #989898;}
 footer>a:visited{ color: blue; }
+
+/* LINKS GLOBAIS */
+a:link{text-decoration: none;}
+a:hover{text-decoration: underline;}
 
 pre{
    color: #ecf0f1;
