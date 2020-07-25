@@ -38,21 +38,22 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 <head>
 	<title>${postName}</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta name="author" content="$autor" />
+	<meta name="author" content="$autor"/>
 	<meta name="description" content="${postName}">
 	<meta name="keywords" content="Linux Machine, ${postName},">
-	<meta name="generator" content="GNU/nano" />
+	<meta name="generator" content="GNU/nano"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../img/linuxmachine.png">
 	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
 </head>
 <body>
+<div class="box">
 
 <main>
 	<a href="../../../">Voltar</a>
 	<h1>$postName</h1>
-	<h2>Autor: $autor</h2>
-	<h3>Data: ${post_date}</h3>
+	<p>Por: $autor</p>
+	<time>Em ${post_date}</time>
 <hr>
 
 <p>POST AQUI</p>
@@ -72,10 +73,33 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 
 </main>
 
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
 <footer>
 	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
 </footer>
 
+</div>
 </body>
 </html>
 EOF
