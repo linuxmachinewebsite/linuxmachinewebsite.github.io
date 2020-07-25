@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Linux Machine</title>
+<link>http://www.linuxmachine.com/</link>
+<description>Seja uma máquina em aprender GNU/Linux! Artigos/Dicas/Tutoriais/Notícias.</description>
+<!--artigo-->
+<item>
+<title>GNU/nano será o editor padrão nas distribuições Linux?</title>
+<link>https://linuxmachine.com/post/2020/07/nano-editor-padrao-no-linux.html</link>
+<pubDate>Sáb Jul 25 00:52:26 BRT 2020</pubDate>
+<description>GNU/Nano será o editor padrão nas distribuições linux?</description>
+</item>
+
+</channel>
+</rss>
