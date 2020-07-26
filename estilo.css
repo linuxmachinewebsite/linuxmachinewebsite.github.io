@@ -7,7 +7,7 @@ body{
    line-height: 1.6;
    background-color: #ecf0f1;
    color: #161616;
-   max-width: 56em;
+   max-width: 52em;
    margin-left: auto;
    margin-right: auto;
    font-family: 'LibreBaskerville-Regular';
@@ -23,8 +23,8 @@ div.box{ margin: 2%;}
  }
 
 /* Cabeçalho */
-header{padding: 0.9%; background-color: #19b5fe; box-shadow: 1px 3px 8px 1px #bdc3c7; border-radius: 2px;}
-header>nav{ font-size: 16px; font-family: 'LibreBaskerville-Regular';}
+header{padding: 0.9%; background-color: #ffffff; box-shadow: 1px 3px 8px 1px #bdc3c7; border-radius: 2px;}
+header>nav{ font-size: 18px; font-family: 'LibreBaskerville-Regular';}
 nav>b.logo{color: #161616; padding-right: 1%;}
 nav>b.logo>a:visited{color: #161616;}
 

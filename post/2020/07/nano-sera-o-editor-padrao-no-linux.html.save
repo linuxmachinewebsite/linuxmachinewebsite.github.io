@@ -1,0 +1,114 @@
+OCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>O nano será o editor de texto padrão no Linux?</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="Jefferson Carneiro"/>
+	<meta name="description" content="O nano será o editor de texto padrão no Linux?">
+	<meta name="keywords" content="Linux Machine, O nano será o editor de texto padrão no Linux?, nano, editor nano, linux">
+	<meta name="generator" content="GNU/nano"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../../img/linuxmachine.png">
+	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
+</head>
+<body>
+<div class="box">
+
+<main>
+	<a href="../../../">Voltar</a>
+	<h1>O nano será o editor de texto padrão no Linux?</h1>
+	<p>Por Jefferson Carneiro</p>
+	<time>Em 25 de julho de 2020</time>
+<hr>
+
+<h2>Texto Narrado, ouça:</h2>
+<audio controls>
+  <source src="../../../audio/nano-sera-o-editor-padrao-no-linux.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<p>
+A pouco tempo recebemos uma boa notícia, a distribuição Fedora que é patrocinada pela <del>pequena</del> Red Hat, 
+anunciou que vai trazer o simples editor de texto nano como padrão em sua versão Workstation.
+</p>
+
+<p>
+Não posso negar, eu sou muito fã do nano e não é atoa que utilizo ele no meu dia a dia, desde 2008 inclusive estou criando esta postagem 
+utilizando o nano 😎
+</p>
+
+<p>
+Atualmente na versão Workstation o poderoso Vi é o editor de texto padrão, mas para você ter que começar a utilizar o mesmo é necessário 
+uma boa leitura antes. O que é um tiro no pé para os iniciantes no mundo Linux.
+Já o editor Nano é mais simples e a curva de aprendizado é bem mais rápida, bastando apenas pressionar a tecla <i>CTRL + G</i> por 
+exemplo para ter um tutorial completo em suas mãos.
+</p>
+
+<p>
+As distribuições Linux estão evoluindo com o tempo, muitas distribuições deixaram de ser "difíceis" e estão aos poucos transportando sua 
+energia para a facilidade de uso.
+</p>
+
+<p>
+Um exemplo é os shells nas distribuições mais antigas, era um padrão vir com o Korn Shell, Bourne Shell (emulado), bash etc... 
+Hoje em dia muitas distribuições estão migrando para shells mais interativos como Zsh, fish.
+</p>
+
+<script data-ad-client="ca-pub-1983636563768502" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<p>
+Então aos poucos as distribuições voltadas para Desktop vão fazer essa migração de várias ferramentas, o nano não fica de fora, e 
+talvez se torne o editor via CLI padrão em muitas distros. Bom, em meu ponto de vista vou passar alguns pontos positivos/negativos do 
+nano.
+</p>
+
+<h2>Pontos positivos do nano</h2>
+<ul>
+   <li>Ideal para leigos no terminal.</li>
+   <li>Curva de aprendizagem quase nula.</li>
+   <li>Orientado a teclas.</li>
+   <li>Faz tudo que um editor gráfico faz e até melhor.</li>
+   <li>Personalizável.</li>
+   <li>Simples.</li>
+</ul>
+
+<h2>Pontos negativos do nano</h2>
+<ul>
+   <li>Certificação LPI entre outras exigem o vi/vim o nano não está incluso.</li>
+   <li>Dificilmente usado em servidores.</li>
+   <li>Lento ao abrir arquivos que são grandes.</li>
+</ul>
+
+
+
+</main>
+
+<div id="disqus_thread"></div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+<footer>
+	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
+</footer>
+
+</div>
+</body>
+</html>
