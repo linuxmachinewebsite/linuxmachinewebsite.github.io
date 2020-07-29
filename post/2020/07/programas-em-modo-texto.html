@@ -4,58 +4,56 @@
 	<title>Programas de modo texto para o seu dia dia</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="Jefferson Carneiro"/>
-	<meta name="description" content="Programas de modo texto para o seu dia dia">
-	<meta name="keywords" content="Linux Machine, Programas de modo texto para o seu dia dia, cli, text-mode">
+	<meta name="description" content="Alguns softwares que rodam via terminal, para tornar seu dia mais prático.">
+	<meta name="keywords" content="Linux Machine, Programas de modo texto, cli, text-mode, terminal">
 	<meta name="generator" content="GNU/nano"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../img/linuxmachine.png">
 	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
 </head>
 <body>
-<div class="box">
+<div class="box-article">
 
 <main>
 	<a href="../../../">Voltar</a>
 	<h1>Programas de modo texto para o seu dia dia</h1>
-	<p>Por: Jefferson Carneiro</p>
-	<time>Em 25 de julho de 2020</time>
+	<div class="descricao-postagem">
+		<img class="profile-image" src="/img/jefferson-carneiro.jpeg">
+			<b>Jefferson Carneiro</b>
+			<time>25 de julho de 2020</time>
+		</p>
+	</div>
 <hr>
-
-<h2>Texto Narrado, ouça:</h2>
-<audio controls>
-  <source src="../../../audio/nano-sera-o-editor-padrao-no-linux.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
-    
+  
 <p>
 Todos aplicativos que usamos via interface gráfica, ou seja que você executa em seu kde, xfce, cinammon, mate existe uma alternativa que roda em modo texto.
-as vantagens são amplas e vamos listar abaixo antes de começar esta dica as vantagens e desvantagens.
 </p>
 
-<h3>Foco total</h3>
+<p>
+Claro que muitos sysadmins já estão acostumados a viver no terminal e conhecem o poder que os aplicativos em modo texto possuem! Mas se você não está habituado listamos abaixo algumas vantagens.
+</p>
+
+<h2>Foco total</h2>
 <p>
 Aplicativos gráfico atuais normalmente tem vários objetivos e um deles é focado no design, tentam deixar a experiência do usuário o mais único possivel. Neste caminho 
 normalmente o foco do aplicativo/software é perdido! Vários botões, imagens e outras coisas desnecessárias são mostradas. Com isso o seu foco é perdido.
 </p>
 
 <p>
-Já aplicativos que rodam em modo texto normalmente são minimalistas, simples e trabalham em modo texto! Ou seja, sem distração aqui. Também vários aplicativos que rodam 
-via CLI tem um design por trás espelhado no UNIX*. Faça uma coisa e muito bem. Normalmente você tem um foco maior.
+Já aplicativos que rodam em modo texto normalmente são minimalistas, simples e é uma brincadeira em texto! Ou seja, sem distração aqui. Também vários aplicativos que rodam 
+via CLI tem um design por trás espelhado no UNIX*. Faça uma coisa e muito bem. Normalmente você tem um foco maior...
 </p>
 
-<h3>Gráfico? Normalmente direto.</h3>
+<h2>Gráfico? Normalmente direto.</h2>
 <p>
 Existe gráfico via CLI? Sim! Normalmente são criados com caixas UI. O seu computador vai trabalhar com folêgo total.
 </p>
 
-<h3>Te torna mais du(rão|rona)</h3>
+<h2>Te torna mais du(rão|rona)</h2>
 <p>
 A sua sede por substituir aplicativos de modo gráfico por modo texto será maior. Por exemplo eu, hoje substitui quase todos meus aplicativos de modo gráfico, só algumas 
-que não consegui... Como o browser/editor de imagens e video.
+que não consegui... Como o browser/editor de imagens e video... Mas fique pasmo, existe alternativas para eles :)
 </p>
-
-
-
 
 <!-- ADS -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -69,6 +67,130 @@ que não consegui... Como o browser/editor de imagens e video.
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+<h3>Moc | Player de música</h3>
+
+<p>
+O Music on console ou mais conhecido como moc, é um player de música muito leve e intuitivo! Ele é baseado em ncurses, ou seja, possui uma interface em modo texto bem intuitiva.
+Conheci ele a alguns anos e tenho que admitir que passou a ser meu player padrão no Linux.
+</p>
+
+<p>
+O moc é um completo player de música via cli, sua sintaxe é simples e fácil! Totalmente orientado a teclas.
+</p>
+
+<h4>Comandinhos do moc</h4>
+
+<pre>
+Execução: mocp
+
+? = Mostra o menu de ajuda
+q = Joga o moc em background
+Q = Sai do moc
+[Enter] = Seleciona a música para tocar
+[Espaço] = Pausa a música
+n = Toca a próxima música 
+b = Toca a música anterior
+< = Baixa o som
+> = Aumenta o som
+Alt+1 = Aumenta 10% do som
+Alt+2 = Aumenta 20% do som
+Alt+3 = Aumenta 30% do som
+....
+</pre>
+
+<img class="image-post" src="../../../img/mocp.jpg">
+
+<h3>Import | Screenshot Gráfico</h3>
+<p>
+As vezes só queremos tirar um printscreen maroto no terminal, ou de qualquer aplicativo modo gráfico! É por isso que o comando import pode salvar o seu dia e lhe poupar alguns cliques.
+</p>
+
+<p>
+O import é um biblioteca presente no software <b>imagemagick</b>, por isso você precisa ter instalado para funcionar.
+</p>
+
+<p>
+O modo de funcionamento é simples: import NomeDaImage.Extensão<br>Desta maneira você precisa selecionar com a cruz aonde você deseja fazer a captura da tela.
+</p>
+
+<pre>
+$ import teste.png
+</pre>
+
+<img class="image-post" src="../../../img/import.jpg">
+
+<p>
+Uma outra alternativa é usar o -window root, desta maneira a captura da tela será feita da janela/monitor aonde está selecionado. A sintaxe é: import -window root NomeDaImagem.extensão
+</p>
+
+<pre>
+$ import -window root teste.jpg
+</pre>
+
+<img class="image-post" src="../../../img/import-root.jpg">
+
+<p>
+Perceba que como possuo dois monitores, foi capturado os dois!
+</p>
+
+<h3>Nano | Editor de texto</h3>
+
+<p>
+Este é o editor mais fácil e para iniciantes em modo texto que você vai achar! Fizemos uma <a href="nano-sera-o-editor-padrao-no-linux.html">máteria</a> aqui no Linux MACHINE, falando sobre como ele pode se tornar o editor de texto padrão em distribuições voltadas para desktop.
+</p>
+
+<p>
+Ele emula o antigo editor pico, porém é bem mais potente e completo! Por ser orientado a teclas é um patro cheio para os iniciantes... Para programadores ele possui syntax highlighting e suporte a várias linguagens de programação.
+</p>
+
+<pre>
+Execução: nano arquivo(s)
+^ = Ctrl
+M = Alt
+
+^ + g = Abre o menu de ajuda
+^ + O = Salva o arquivo
+^ + x = Salva/Sai do arquivo
+^ + k = Recorta/copia
+^ + u = Cola
+</pre>
+
+<img class="image-post" src="../../../img/nano.jpg">
+
+<p>
+Existe um <a href="https://slackjeff.com.br/expCursos/mini-curso-nano.html">curso completo do editor nano</a> por um valor atrativo. Confira!
+</p>
+
+
+<h3>McEdit | Editor de texto</h3>
+
+
+<h3>xpdf-utils/Pdshell | Leitor de PDF</h3>
+
+
+<h3>MC | Gerenciador de arquivos</h3>
+
+<h3>Ranger | Gerenciador de arquivos</h3>
+
+<h3>Mutt | Gerenciador de emails</h3>
+
+<p>
+Existe uma grande variedade nesta categoria e eu tenho um preferido simples e fácil, é o cãozinho feliz, ele se chama Mutt.
+
+Ele já vem instalado em várias distribuições e está na ativa desde 1995. No começo, achei um pouco complicado de configurar, mas depois que se tem o "muttrc" configurado, só vai. Eu estou disponibilizando aqui meu "muttrc" todo certo, baixe, adicione as suas configurações e adicione em "~/.muttrc".
+</p>
+
+<h3>Alpine | Gerenciador de emails</h3>
+
+
+
+<h3>Irssi | Cliente IRC</h3>
+
+<h3>Telegram-cli | Cliente telegram cli</h3>
+
+<h3>links | Browser</h3>
+
 
 </main>
 

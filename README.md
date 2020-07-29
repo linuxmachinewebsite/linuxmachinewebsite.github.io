@@ -1,2 +1,0 @@
-# linuxmachine.github.io
-Website

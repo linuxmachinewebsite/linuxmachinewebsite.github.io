@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: LibreBaskerville-Regular;
   src: url(fonte/LibreBaskerville-Regular.ttf);
@@ -5,49 +7,75 @@
 
 body{
    line-height: 1.6;
-   background-color: #ecf0f1;
+   background-color: #ffffff;
    color: #161616;
-   max-width: 52em;
-   margin-left: auto;
-   margin-right: auto;
    font-family: 'LibreBaskerville-Regular';
-   font-size: 17px;
 }
-div.box{ margin: 2%;}
-#artigos{
+/* Div principal do conteudo */
+div.box{ 
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60em;
+}
+ 
+#artigos {
   margin-top: 3%;
-  padding: 3%; 
-  box-shadow: 1px 3px 8px 1px #bdc3c7;
   border-radius: 3px;
-  background-color: #ffffff;
+  max-width: 55em;
+
  }
+#artigos a:link {font-size: 1.5em; color: black; background-color: #ffad00;}
+#artigos a:visited {color: black;}
+#artigos>ul>li{margin-bottom: 4%; padding: 1.2%;}
+#artigos>ul {
+  list-style-image: url(img/read.gif);
+}
+/* Box Artigos */
+.box-article{
+  max-width: 45em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-article a:link{text-decoration: underline;}
 
 /* Cabeçalho */
-header{padding: 0.9%; background-color: #ffffff; box-shadow: 1px 3px 8px 1px #bdc3c7; border-radius: 2px;}
-header>nav{ font-size: 18px; font-family: 'LibreBaskerville-Regular';}
-nav>b.logo{color: #161616; padding-right: 1%;}
-nav>b.logo>a:visited{color: #161616;}
+header{padding: 0.9%; background-color: black;}
+header>nav{ font-size: 1.1em; font-family: sans-serif;}
+
+header>nav>.logo>a{color: #ecf0f1;}
+header>nav>.logo>a:visited{color: #ecf0f1;}
 
 /* LINKS MENU Cabeçãlho */
-nav>a{ color: #161616; }
-nav>a:visited{ color: #161616; }
+header>nav>a{ color: #ecf0f1; margin-right: 2%; float: right; }
+header>nav>a:visited{ color: #ecf0f1; }
 
 /* Data postagem */
-small{background-color: #ecf0f1; color: #19b5fe; padding: 0.1%; margin-left: 1%;}
+time {background-color: black; color: white; padding: 0.1%; font-size: 0.9em; font-family: sans-serif;}
 
 /* Rodapé */
-footer{margin-top: 4%; color: #989898;}
+footer{ margin-top: 4%; color: #989898;}
 footer>a:visited{ color: blue; }
 
 /* LINKS GLOBAIS */
-a:link{text-decoration: none;}
+a:link{text-decoration: none; color: #43484e;}
+a:visited{color: #43484e;}
 a:hover{text-decoration: underline;}
 
 pre{
-   color: #ecf0f1;
-   border: solid 2px #bdc3c7;
-   background-color: #292929;
+   font-size: 0.9em;
+   color: black;
+   border: solid 1px black;
    padding: 1.5%;
 }
 
+/* H1 H2 H3 H4 etc... */
+h2{margin-top: 10%; margin-bottom: 2%;}
+h3{margin-top: 10%; margin-bottom: 2%;}
+.image-post{max-width: 100%; margin-top: 2%; margin-bottom: 1%; box-shadow: 5px 10px 10px 2px black;}
+
 #disqus_thread{margin-top: 6%;}
+
+/* PROFILE ESCRITOR */
+.descricao-postagem {}
+.profile-image{max-width: 20%; vertical-align: middle;}

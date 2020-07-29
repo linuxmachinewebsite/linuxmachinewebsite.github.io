@@ -3,35 +3,69 @@
 #======================================Vars
 export autor='Jefferson Carneiro'
 export EDITOR='nano'
-export url="https://linuxmachine.com"
+export url="https://linuxmachine.com.br"
 
 #======================================Teste
-[ ! -d "post/" ] && { mkdir -v post/ ;} # diretorio post existe?
+[[ ! -d "post/" ]] && { mkdir -v post/ ;} # diretorio post existe?
 
 #======================================FUNCOES
+LOGO()
+{
+  clear
+  cat <<EOF
+
+  _ _                    __  __    _    ____ _   _ ___ _   _ _____ 
+ | (_)_ __  _   ___  __ |  \/  |  / \  / ___| | | |_ _| \ | | ____|
+ | | | '_ \| | | \ \/ / | |\/| | / _ \| |   | |_| || ||  \| |  _|  
+ | | | | | | |_| |>  <  | |  | |/ ___ \ |___|  _  || || |\  | |___ 
+ |_|_|_| |_|\__,_/_/\_\ |_|  |_/_/   \_\____|_| |_|___|_| \_|_____|
+                                                                   
+EOF
+}
+
 POST() # POSTAGEM
 {
   post_date=$(date '+%d de %B de %Y')
   _mes=$(date +%m)
   _ano=$(date +%Y)
-  
+
   # Criando estrutura para o post.
-  mkdir -vp post/${_ano}/${_mes}
-  
+  mkdir -vp "post/${_ano}/${_mes}"
+
   # Criação de Url
-  while [ -z "$urlName" ]; do
-    printf '%s' "Digite a url: "
-    read -e urlName
+  local regex='^[[:alnum:]]+$' # Não permitimos acentos, entre outros caracteres
+  while [[ -z "$urlName" ]]; do
+      echo "Digite a URL da postagem!"
+      read -e urlName
+      if ! [[ "$urlName" =~ $regex ]]; then
+         echo "Somente caracteres: a-z | A-Z | 0-9"
+         continue
+      fi
   done
-  urlName=$(echo "$urlName" | sed 's/ /-/g') # Convertendo espaços por traços.
-  
+  urlName=${urlName// /-} # Convertendo espaços por traços.
+  urlName=${urlName,,}    # Maiusculo para minusculo.
+
   # Criação do nome do post.
-  while [ -z "$postName" ]; do
-    printf '%s' "Digite o nome do post: "
-    read -e postName
+  while [[ -z "$postName" ]]; do
+      echo "# Digite o nome da postagem:"
+      echo "# Use uma chamada CHAMATIVA!"
+      read -e postName
   done
 
-  
+  # Criação da descrição da postagem no index
+  while [[ -z "$giantdesc" ]]; do
+      echo "# Descrição para postagem no index!"
+      echo "# Faça uma descrição bem chamativa e que envolva a postagem."
+      read -e giantdesc
+  done
+
+   while [[ -z "$tags" ]]; do
+         echo "# Digite algumas tags relacionadas a postagem."
+         echo "# Elas devem ser separadas/delimitadas por virgulas!"
+         echo "# Exemplo: linux,terminal,como usar o comando apt,instalar programa apt"
+         read -e tags
+   done
+
 cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,26 +73,32 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 	<title>${postName}</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="$autor"/>
-	<meta name="description" content="${postName}">
-	<meta name="keywords" content="Linux Machine, ${postName},">
-	<meta name="generator" content="GNU/nano"/>
+	<meta name="description" content="${giantdesc}">
+	<meta name="keywords" content="Linux Machine, ${postName}, ${tags}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../../../img/linuxmachine.png">
+   <link rel="icon" href="../../../img/linuxmachine.png">
 	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
 </head>
 <body>
-<div class="box">
+<div class="box-article">
 
 <main>
-	<a href="../../../">Voltar</a>
-	<h1>$postName</h1>
-	<p>Por: $autor</p>
-	<time>Em ${post_date}</time>
+	<a href="/">Voltar</a>
+		<h1>$postName</h1>
+	   <div class="descricao-postagem">
+	      <img class="profile-image" src="/img/jefferson-carneiro.jpeg">
+	      <b>$autor</b>
+	      <time>${post_date}</time>
+      </div>
 <hr>
+
+<!--
+   ABAIXO VOCÊ DEVE INICIAR A POSTAGEM!
+-->
 
 <p>POST AQUI</p>
 
-<!-- ADS -->
+<!-- ADSENSE -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Linux machine post -->
 <ins class="adsbygoogle"
@@ -73,6 +113,7 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 
 </main>
 
+<!-- SISTEMA DE COMENTÁRIO DISQUS -->
 <div id="disqus_thread"></div>
 <script>
 
@@ -111,8 +152,7 @@ INSERT()
     echo "Iserindo no index.html"
     # Inserindo no index
     printf '%s\n' "Inserindo no INDEX."
-    sleep 1s
-    sed -i "/<!-- Artigos -->/a <p><a href="post/${_ano}/${_mes}/${urlName}.html">${postName}</a> <small>${post_date}</small></p>" index.html
+    sed -i "/<!-- Artigos -->/a <li><a href="post/${_ano}/${_mes}/${urlName}.html">${postName}</a><br>${giantdesc}<br><time>${post_date}</time></li>\n" index.html
 }
 
 GIT()
@@ -127,23 +167,29 @@ GIT()
 FEED() # Enviando para o feed de noticias
 {
   data="$(date)"
-  read -ep "Escreva uma descrição para o FEED: " desc
+  read -ep "# Escreva uma descrição para o Feed de noticias: " desc
   sed -i "/<\!--artigo-->/a <item>\n<title>$postName</title>\n<link>${url}/post/${_ano}/${_mes}/${urlName}.html</link>\n<pubDate>${data}</pubDate>\n<description>${desc}</description>\n</item>" linuxmachine.rss
   echo "Descrição inserida no feed."
 }
 
-
-
 #======================= INICIO
-POST
-INSERT
-FEED
-read -p "Enviar para o git? [S/n]: " rep
-rep=${rep:=s}
-rep=${rep,,}
-if [[ "$rep" = 's' ]]; then
-  GIT
-else
-  echo "Saindo..."
-  exit 0
-fi
+LOGO
+echo -e "O que você deseja fazer?\n"
+PS3='> '
+select x in 'Iniciar Postagem' 'Inserir no Index uma nova postagem' 'Inserir no Feed uma nova postagem' 'Enviar para o servidor' 'Sair'; do
+   case $x in
+      'Iniciar Postagem')
+         POST
+      ;;
+      'Inserir no Index uma nova postagem')
+         INSERT
+      ;;
+      'Inserir no Feed uma nova postagem')
+         FEED
+      ;;
+      'Enviar para o servidor')
+         GIT
+      ;;
+      'Sair') exit 0 ;;
+   esac
+done
