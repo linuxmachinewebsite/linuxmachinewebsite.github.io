@@ -1,16 +1,23 @@
-
-
-@font-face {
-  font-family: LibreBaskerville-Regular;
-  src: url(fonte/LibreBaskerville-Regular.ttf);
-}
-
 body{
    line-height: 1.6;
    background-color: #ffffff;
    color: #161616;
-   font-family: 'LibreBaskerville-Regular';
+   font-family: 'sans-serif';
 }
+
+/* Cabeçalho */
+header>nav{
+  background-color: #eeeeee;
+  font-size: 1.2em;
+  padding: 2%;
+}
+
+header>nav>.logo>a{color: black; text-decoration: none;}
+header>nav>.logo>a:visited{color: black;}
+
+/* LINKS MENU Cabeçãlho */
+header>nav>a{color: blue; margin-right: 3%; float: right; text-decoration: underline;}
+
 /* Div principal do conteudo */
 div.box{ 
   margin-left: auto;
@@ -24,8 +31,7 @@ div.box{
   max-width: 55em;
 
  }
-#artigos a:link {font-size: 1.5em; color: black; background-color: #ffad00;}
-#artigos a:visited {color: black;}
+#artigos a:link {font-size: 1.8em; color: blue; text-decoration: none;}
 #artigos>ul>li{margin-bottom: 4%; padding: 1.2%;}
 #artigos>ul {
   list-style-image: url(img/read.gif);
@@ -39,28 +45,12 @@ div.box{
 
 .box-article a:link{text-decoration: underline;}
 
-/* Cabeçalho */
-header{padding: 0.9%; background-color: black;}
-header>nav{ font-size: 1.1em; font-family: sans-serif;}
-
-header>nav>.logo>a{color: #ecf0f1;}
-header>nav>.logo>a:visited{color: #ecf0f1;}
-
-/* LINKS MENU Cabeçãlho */
-header>nav>a{ color: #ecf0f1; margin-right: 2%; float: right; }
-header>nav>a:visited{ color: #ecf0f1; }
-
 /* Data postagem */
-time {background-color: black; color: white; padding: 0.1%; font-size: 0.9em; font-family: sans-serif;}
+time {background-color: #eeeeee; color: black; padding: 0.1%; font-size: 0.9em; font-family: sans-serif;}
 
 /* Rodapé */
-footer{ margin-top: 4%; color: #989898;}
+footer{text-align: center; margin-top: 4%; color: #989898;}
 footer>a:visited{ color: blue; }
-
-/* LINKS GLOBAIS */
-a:link{text-decoration: none; color: #43484e;}
-a:visited{color: #43484e;}
-a:hover{text-decoration: underline;}
 
 pre{
    font-size: 0.9em;
@@ -77,5 +67,4 @@ h3{margin-top: 10%; margin-bottom: 2%;}
 #disqus_thread{margin-top: 6%;}
 
 /* PROFILE ESCRITOR */
-.descricao-postagem {}
 .profile-image{max-width: 20%; vertical-align: middle;}

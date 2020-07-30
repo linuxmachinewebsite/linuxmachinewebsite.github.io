@@ -33,29 +33,25 @@ POST() # POSTAGEM
   mkdir -vp "post/${_ano}/${_mes}"
 
   # Criação de Url
-  local regex='^[[:alnum:]]+$' # Não permitimos acentos, entre outros caracteres
   while [[ -z "$urlName" ]]; do
-      echo "Digite a URL da postagem!"
+      echo -e "\n# Digite a URL da postagem!"
       read -e urlName
-      if ! [[ "$urlName" =~ $regex ]]; then
-         echo "Somente caracteres: a-z | A-Z | 0-9"
-         continue
-      fi
   done
   urlName=${urlName// /-} # Convertendo espaços por traços.
+  urlName=${urlName//_/-} # Convertendo underlines por traços.
   urlName=${urlName,,}    # Maiusculo para minusculo.
 
   # Criação do nome do post.
   while [[ -z "$postName" ]]; do
-      echo "# Digite o nome da postagem:"
+      echo -e "\n#Digite o nome da postagem:"
       echo "# Use uma chamada CHAMATIVA!"
       read -e postName
   done
 
   # Criação da descrição da postagem no index
   while [[ -z "$giantdesc" ]]; do
-      echo "# Descrição para postagem no index!"
-      echo "# Faça uma descrição bem chamativa e que envolva a postagem."
+      echo -e "\n# Descrição para postagem no index!"
+      echo -e "\n# Faça uma descrição bem chamativa e que envolva a postagem."
       read -e giantdesc
   done
 
