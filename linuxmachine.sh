@@ -172,15 +172,11 @@ FEED() # Enviando para o feed de noticias
 LOGO
 echo -e "O que você deseja fazer?\n"
 PS3='> '
-select x in 'Iniciar Postagem' 'Inserir no Index uma nova postagem' 'Inserir no Feed uma nova postagem' 'Enviar para o servidor' 'Sair'; do
+select x in 'Iniciar Postagem' 'Enviar para o servidor' 'Sair'; do
    case $x in
       'Iniciar Postagem')
          POST
-      ;;
-      'Inserir no Index uma nova postagem')
          INSERT
-      ;;
-      'Inserir no Feed uma nova postagem')
          FEED
       ;;
       'Enviar para o servidor')
