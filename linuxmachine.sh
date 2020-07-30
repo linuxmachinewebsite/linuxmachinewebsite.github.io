@@ -157,6 +157,7 @@ GIT()
   git add *
   read -ep "Comentário das alterações: " comment
   git commit -m "$comment"
+  git pull
   git push
 }
 
