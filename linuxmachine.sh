@@ -164,7 +164,7 @@ FEED() # Enviando para o feed de noticias
 {
   data="$(date)"
   read -ep "# Escreva uma descrição para o Feed de noticias: " desc
-  sed -i "/<\!--artigo-->/a <item>\n<title>$postName</title>\n<link>${url}/post/${_ano}/${_mes}/${urlName}.html</link>\n<pubDate>${data}</pubDate>\n<description>${desc}</description>\n</item>" linuxmachine.rss
+  sed -i "/<\!--artigo-->/a <item>\n<title>$postName</title>\n<link>${url}/post/${_ano}/${_mes}/${urlName}.html</link>\n<pubDate>${data}</pubDate>\n<description>${desc}</description>\n</item>" linuxmachine.xml
   echo "Descrição inserida no feed."
 }
 
