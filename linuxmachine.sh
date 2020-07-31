@@ -82,9 +82,7 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 	<a href="/">Voltar</a>
 		<h1>$postName</h1>
 	   <div class="descricao-postagem">
-	      <img class="profile-image" src="/img/jefferson-carneiro.jpeg">
-	      <b>$autor</b>
-	      <time>${post_date}</time>
+	      Por <b>$autor</b> em <time><i>${post_date}</i></time>
       </div>
 <hr>
 
@@ -93,19 +91,6 @@ cat << EOF > "post/${_ano}/${_mes}/${urlName}.html"
 -->
 
 <p>POST AQUI</p>
-
-<!-- ADSENSE -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Linux machine post -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1983636563768502"
-     data-ad-slot="8975888692"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 </main>
 
