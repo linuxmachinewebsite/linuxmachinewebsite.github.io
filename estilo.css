@@ -25,5 +25,7 @@ div.box{
 footer{text-align: center; margin-top: 4%; color: #989898;}
 footer>a:visited{ color: blue; }
 
+q { color: gray;}
+
 /* Comentario disqus */
 #disqus_thread{margin-top: 6%;}

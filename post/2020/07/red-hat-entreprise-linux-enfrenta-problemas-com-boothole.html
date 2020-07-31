@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Red Hat Enterprise Linux enfrenta problemas com o patch do Boothole</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="Jefferson Carneiro"/>
+	<meta name="description" content="A correção da Red Hat para a falha de segurança do Boothole impediu a inicialização de alguns sistemas dos usuários.">
+	<meta name="keywords" content="Linux Machine, Red Hat Enterprise Linux enfrenta problemas com o patch do Boothole, red hat linux, boothole, problemas, patch">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="../../../img/linuxmachine.png">
+	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
+</head>
+<body>
+<div class="box-article">
+
+<main>
+	<a href="/">Voltar</a>
+		<h1>Red Hat Enterprise Linux enfrenta problemas com o patch do Boothole</h1>
+	   <div class="descricao-postagem">
+	      Tradução <b>Jefferson Carneiro</b> em <time><i>31 de julho de 2020</i></time>
+      </div>
+<hr>
+
+<!--
+   ABAIXO VOCÊ DEVE INICIAR A POSTAGEM!
+-->
+
+<p>A correção da Red Hat para a falha de segurança do Boothole impediu a inicialização de alguns sistemas dos usuários.</p>
+
+<p>
+Às vezes a cura é realmente pior do que a doença. O problema de segurança do Boothole, recentemente revelado, com GRUB2 e Secure Boot, 
+pode, teoricamente, ser usado para atacar sistemas Linux. Na prática, os únicos sistemas Linux vulneráveis ​​são aqueles que já foram 
+violados com sucesso por um invasor. Ainda assim, o potencial de danos estava presente, então quase todos os distribuidores Linux 
+corporativos lançaram patches. Infelizmente, para pelo menos um usuário do sistema, a correção deu errado.
+</p>
+
+<p>
+Muitos usuários estão relatando que, depois de corrigir o Red Hat Enterprise Linux (RHEL) 8.2, ele tornou seus sistemas não 
+inicializáveis . O problema também parece afetar os computadores RHEL 7.xe 8.x. Parece, no entanto, limitar-se apenas a servidores 
+rodando com ferro puro. As máquinas virtuais (VM) s RHEL, que não lidam com o firmware do Secure Boot, estão funcionando bem. 
+</p>
+
+<p>
+O RHEL não é o único Linux com esse problema: os  usuários do CentOS 7.xe 8.x também estão relatando problemas . Também houve relatos 
+esporádicos de problemas de inicialização do Boothole com outras distribuições do Linux.<br>
+Um reparo está a caminho. <i>Peter Allor</i>, diretor da equipe de resposta a incidentes de segurança de produtos da Red Hat, me disse: 
+</p>
+
+<q>
+A Red Hat foi informada de um possível problema com a correção para o CVE-2020-10713, também conhecido como Bootjole, pelo qual alguns 
+sistemas Red Hat Enterprise Linux 7 e Red Hat Enterprise Linux 8 podem não ser reinicializados com êxito após a correção ser aplicada, 
+exigindo intervenção manual para correção. No momento, estamos investigando esse problema e forneceremos mais informações assim que 
+disponíveis.
+</q>
+
+<p>
+Outros funcionários da Red Hat dizem que a correção estará em breve disponível. Portanto, se você ainda não fez o patch, aguarde. Se 
+você tem e está tendo problemas, a ajuda está a caminho. :)
+</p>
+
+<h2>Fonte</h2>
+<a href='https://www.zdnet.com/article/red-hat-enterprise-linux-runs-into-boothole-patch-trouble/#ftag=RSSbaffb68'>zdnet</a>
+
+</main>
+
+<!-- SISTEMA DE COMENTÁRIO DISQUS -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<footer>
+	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
+</footer>
+
+</div>
+</body>
+</html>
