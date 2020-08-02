@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Hardinfo Descobrindo e testando seu hardware</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="Jefferson Carneiro"/>
+	<meta name="description" content="xistem várias formas de se explorar o hardware de seu PC (CPU, RAM, HD...), aqui vou apresentar uma maneira rápida e prática para isso. Embora existam vários comandos de console e arquivos de sistema que possam ser consultados, aqui vou  lhes apresentar uma ferramenta (app) que pode ser facilmente utilizada nos ambientes Linux.">
+	<meta name="keywords" content="Linux Machine, Hardinfo Descobrindo e testando seu hardware, hardinfo, hardware, linux">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="../../../img/linuxmachine.png">
+	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
+</head>
+<body>
+<div class="box-article">
+
+<main>
+	<a href="/">Voltar</a>
+		<h1>Hardinfo Descobrindo e testando seu hardware</h1>
+	   <div class="descricao-postagem">
+	      Por <b>Franklin Rocha</b> em <time><i>01 de agosto de 2020</i></time>
+      </div>
+<hr>
+
+<!--
+   ABAIXO VOCÊ DEVE INICIAR A POSTAGEM!
+-->
+
+<p>
+Existem várias formas de se explorar o hardware de seu PC (CPU, RAM, HD...), aqui vou apresentar uma maneira rápida e prática para isso. 
+Embora existam vários comandos de console e arquivos de sistema que possam ser consultados, aqui vou  lhes apresentar uma ferramenta 
+(app) que pode ser facilmente utilizada nos ambientes Linux. A ferramenta em questão é o Hardinfo.
+</p>
+
+
+<img class='image-post' src="../../../img/hardinfo.png">
+
+<p>
+O aplicativo detecta o hardware presente em sua maquina, apresentando informações detalhadas e emite relatórios sobre seu hardware, além 
+disso é possivel executar testes de desempenho na CPU para avaliar a capacidade de processamento.
+O software é de facil instalação e esta disponivel no Linux em versões que eu pude conferir para Slackware através do Slackbuilds e no 
+repositório do Ubuntu. O aplicativo roda em ambiente gráfico e veremos abaixo como instala-lo.
+</p>
+
+<h2>Instalação Slackware</h2>
+
+<p>
+No Slackware é necessário buscar <i>hardinfo</i> no <a target='_blank' href="http://slackbuilds.org">slackbuilds.org</a> e então baixar o arquivo source <b>hardinfo-0.5.1.tar.bz2</b> e o arquivo <i>build</i> <b>hardinfo.tar.gz</b> e fazer a compilação da build para o Slackware, depois instalar o pacote resultante com o comando <b>installpkg</b>.
+</p>
+
+<q>
+OBS: Caso seja necessário um passo a passo detalhado do processo de compilação de pacotes Slackbuild consulte o canal do Youtube 
+<a target="_blank" href="https://youtu.be/Xx-ZO734zbc">slackjeff</a> onde existe um video detalhado sobre o assunto. 
+</q>
+
+
+<h2>Instalação Ubuntu e flavors</h2>
+
+<p>
+Em sistemas Ubuntu e derivados a instalação é simples bastando rodar o comando abaixo que irá baixar e instalar o pacote binário direto 
+do repositório do Ubuntu.
+</p>
+
+<pre>
+sudo apt install hardinfo
+</pre>
+
+</main>
+
+<!-- SISTEMA DE COMENTÁRIO DISQUS -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<footer>
+	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
+</footer>
+
+</div>
+</body>
+</html>
