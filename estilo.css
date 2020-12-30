@@ -1,28 +1,43 @@
 body{
    line-height: 1.6;
-   font-family:Helvetica,sans-serif;
+   font-family: sans-serif;
+   background-color: #eeeeee; 
+   margin: 0px;
 }
 
 /* Cabeçalho */
-header>nav>.logo>a{color: black; text-decoration: none;}
+nav{
+  text-align: center; font-size: 1.5em; background-color: black;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+header>nav>.logo>a{color: black;text-decoration: none; color: #00ff00;}
+header>nav>a:link{color: white;}
+header>nav>a:visited{color: white;}
 
 /* Div principal do conteudo */
-div.box{ 
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60em;
+div.box{
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px 20px 20px 20px;
+
 }
 
 /* Artigos principal index */
-#artigos a:link {font-size: 1.4em;}
-#artigos>ul>li{margin-bottom: 2%;}
+#artigos a:link {font-size: 35px; color: black;}
+#artigos a:visited{color: black;}
+#artigos>ul>li{margin-bottom: 2%; list-style-type: square;}
 
 /* Box Artigos */
 .box-article{max-width: 60em; margin-left: auto; margin-right: auto; text-align: justify;}
 .image-post{max-width: 100%; margin-top: 1%; margin-bottom: 1%;}
 
 /* Rodapé */
-footer{text-align: center; margin-top: 4%; color: #989898;}
+footer{text-align: center; color: #989898; font-size: 17px;}
 footer>a:visited{ color: blue; }
 
 q { color: gray;}

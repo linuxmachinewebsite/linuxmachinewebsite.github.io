@@ -3,7 +3,7 @@
 #======================================Vars
 export autor='Jefferson Carneiro'
 export EDITOR='nano'
-export url="https://linuxmachine.com.br"
+export url="https://linuxmachine.org"
 
 #======================================Teste
 [[ ! -d "post/" ]] && { mkdir -v post/ ;} # diretorio post existe?
@@ -46,13 +46,6 @@ POST() # POSTAGEM
       echo -e "\n#Digite o nome da postagem:"
       echo "# Use uma chamada CHAMATIVA!"
       read -e postName
-  done
-
-  # Criação da descrição da postagem no index
-  while [[ -z "$giantdesc" ]]; do
-      echo -e "\n# Descrição para postagem no index!"
-      echo -e "\n# Faça uma descrição bem chamativa e que envolva a postagem."
-      read -e giantdesc
   done
 
    while [[ -z "$tags" ]]; do
@@ -133,7 +126,7 @@ INSERT()
     echo "Iserindo no index.html"
     # Inserindo no index
     printf '%s\n' "Inserindo no INDEX."
-    sed -i "/<!-- Artigos -->/a <li><a href="post/${_ano}/${_mes}/${urlName}.html">${postName}</a><br>${giantdesc}<br><time>${post_date}</time></li>\n" index.html
+    sed -i "/<!-- Artigos -->/a <li><a href="post/${_ano}/${_mes}/${urlName}.html">${postName}</a><br><time>${post_date}</time></li>\n" index.html
 }
 
 GIT()

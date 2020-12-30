@@ -2,30 +2,30 @@
 <rss version="2.0">
 <channel>
 <title>Linux Machine</title>
-<link>http://www.linuxmachine.com/</link>
+<link>http://www.linuxmachine.org/</link>
 <description>Seja uma máquina em aprender GNU/Linux! Artigos/Dicas/Tutoriais/Notícias.</description>
 <!--artigo-->
 <item>
 <title>Hardinfo Descobrindo e testando seu hardware</title>
-<link>https://linuxmachine.com.br/post/2020/08/hardinfo-descobrindo-e-testando-seu-hardware.html</link>
+<link>https://linuxmachine.org/post/2020/08/hardinfo-descobrindo-e-testando-seu-hardware.html</link>
 <pubDate>Sáb Ago  1 21:36:53 BRT 2020</pubDate>
 <description>Existem várias formas de se explorar o hardware de seu PC (CPU, RAM, HD...), aqui vou apresentar uma maneira rápida e prática para isso. Embora existam vários comandos de console e arquivos de sistema que possam ser consultados, aqui vou  lhes apresentar uma ferramenta (app) que pode ser facilmente utilizada nos ambientes Linux</description>
 </item>
 <item>
 <title>Red Hat Enterprise Linux enfrenta problemas com o patch do Boothole</title>
-<link>https://linuxmachine.com.br/post/2020/07/red-hat-entreprise-linux-enfrenta-problemas-com-boothole.html</link>
+<link>https://linuxmachine.org/post/2020/07/red-hat-entreprise-linux-enfrenta-problemas-com-boothole.html</link>
 <pubDate>Sex Jul 31 12:38:23 BRT 2020</pubDate>
 <description>A correção da Red Hat para a falha de segurança do Boothole impediu a inicialização de alguns sistemas dos usuários.</description>
 </item>
 <item>
 <title>Programas de modo texto para o seu dia dia</title>
-<link>https://linuxmachine.com.br/post/2020/07/programas-em-modo-texto.html</link>
+<link>https://linuxmachine.org/post/2020/07/programas-em-modo-texto.html</link>
 <pubDate>Sáb Jul 30 15:39:16 BRT 2020</pubDate>
 <description>Programas de modo texto para usar no dia a dia</description>
 </item>
 <item>
 <title>O nano será o editor de texto padrão no Linux?</title>
-<link>https://linuxmachine.com.br/post/2020/07/nano-sera-o-editor-padrao-no-linux.html</link>
+<link>https://linuxmachine.org/post/2020/07/nano-sera-o-editor-padrao-no-linux.html</link>
 <pubDate>Sáb Jul 30 03:12:52 BRT 2020</pubDate>
 <description>O nano será o editor de texto padrão no Linux?</description>
 </item>
