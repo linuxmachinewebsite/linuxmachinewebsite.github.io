@@ -5,17 +5,14 @@ body{
    margin: 0px;
 }
 
-/* Cabeçalho */
+/* Cabeçalho e links*/
 nav{
   text-align: center; font-size: 1.5em; background-color: black;
   padding-top: 1%;
   padding-bottom: 1%;
 }
 header>nav>.logo>a{color: black;text-decoration: none; color: #00ff00;}
-<<<<<<< HEAD
 header>nav>a:link{color: white;}
-=======
->>>>>>> f984c6684a0acb73746c2507ca84617f45b6d110
 header>nav>a:visited{color: white;}
 
 /* Div principal do conteudo */

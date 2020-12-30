@@ -132,7 +132,7 @@ INSERT()
 GIT()
 {
   echo "Enviando para github."
-  git add *
+  git add .
   read -ep "Comentário das alterações: " comment
   git commit -m "$comment"
   git push
