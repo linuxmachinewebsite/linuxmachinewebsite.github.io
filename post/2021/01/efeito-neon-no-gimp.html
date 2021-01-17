@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Efeito Neon no GIMP - Linux Machine</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="Júlia Parente"/>
+	<meta name="description" content="">
+	<meta name="keywords" content="Linux Machine, gimp, efeito neon, linux, open source, gnu/linux">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="../../../img/linuxmachine.png">
+	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
+</head>
+<body>
+<div class="box-article">
+
+<main>
+	<a href="/">Voltar</a>
+		<h1>Efeito neon no GIMP.</h1>
+	   <div class="descricao-postagem">
+	      Por <b>Júlia Parente</b> em <time>17 de janeiro de 2021</time>
+      </div>
+<hr>
+
+<!--
+   ABAIXO VOCÊ DEVE INICIAR A POSTAGEM!
+-->
+
+<p>
+Vamos começar criando um modelo de página, para isso vá em “<b>Arquivo</b>” > “<b>Nova</b>” ou <b>(Ctrl+N)</b> e clique em “<b>OK</b>” na janela que será aberta;<br>
+* Escolha o tamanho do modelo de acordo com a sua preferência. 
+</p>
+
+<img class='image-post' src="../../../img/1.png">
+
+<p>
+Agora vamos preencher na cor preta o modelo da página que criamos, para isto selecione a “<b>Ferramenta de Preenchimento</b>” ou <b>(Shift+B)</b>. Assim vamos ter um fundo que vai destacar o efeito do neon no final;
+</p>
+
+<img class='image-post' src="../../../img/2.png">
+
+
+<p>
+Depois de preencher o fundo do modelo na cor preta, selecione a “<b>Ferramenta de Texto</b>” ou <b>(T)</b> e digite a palavra ou frase que você quer personalizar. Altere a cor para branco e escolha a fonte e tamanho de acordo com a sua preferência;<br>
+
+* Neste passo a cor ainda não importa, a alteração da cor é somente para visualizar melhor
+</p>
+
+<img class='image-post' src="../../../img/3.png">
+
+
+<p>
+Agora com a layer/camada de texto criada, clique com o botão direito no mouse sobre ela e selecionar a opção “<b>Alfa Para Seleção</b>”:
+</p>
+
+<img class='image-post' src="../../../img/4.png">
+
+<h2>Nota</h2>
+<p>
+Note que, depois de selecionar essa opção, irá gerar uma linha tracejada ao redor das letras…
+</p>
+
+
+<img class='image-post' src="../../../img/5.png">
+
+
+<p>
+Em seguida vá em “<b>Editar</b>” > “<b>Contornar Seleção</b>”
+</p>
+
+
+<img class='image-post' src="../../../img/6.png">
+
+
+<p>
+Irá abrir uma janela com as opções que podem ser alteradas. Recomendo que altere somente uma opção, para ter o efeito do neon. A “<b>Largura da Linha</b>”, ela  vai criar um contorno externo nas letras que dá a ilusão do neon, e nessa opção você pode deixar a linha mais grossa ou fina, mas lembre-se de que este valor irá alterar conforme o tamanho da sua fonte.
+<br>Altere a cor do contorno de acordo com a sua preferência e clique em “<b>Stroke</b>” na janela.
+</p>
+
+<img class='image-post' src="../../../img/7.png">
+
+
+<p>
+Após criarmos um contorno externo nas letras podemos deletar o corpo da letra, que é o preenchimento branco que ficou. Para isso basta dar “<b>Delete</b>” e ficará somente o contorno, nesse caso o contorno verde;
+</p>
+
+<img class='image-post' src="../../../img/8.png">
+
+<p>
+Com o contorno criado remova a seleção do contorno, vá em "<b>Selecionar</b>" > “<b>Nada</b>” ou <b>(Shift+Crtl+A)</b>
+</p>
+
+<img class='image-post' src="../../../img/9.png">
+
+
+<p>
+Depois de criarmos a base, podemos seguir para a parte da iluminação que vai dar o efeito de neon ao seu texto
+</p>
+
+
+<p>
+Para criar a iluminação vá em “<b>Filtros</b>” > “<b>Luz e Sombra</b>” > “<b>Sombra Projetada</b>”
+</p>
+
+<img class='image-post' src="../../../img/10.png">
+
+
+<p>
+Na janela que será aberta vai ter várias opções. Para se obter o efeito do neon configurei as seguintes opções: Posição da sombra (X e Y ), desfoque da sombra (Raio de Desfoque), densidade da sombra (Grow Radius) e opacidade da sombra (Opacidade). 
+</p>
+
+<img class='image-post' src="../../../img/11.png">
+
+
+<p>
+Com o refinamento dessas opções você terá um efeito de neon, podendo aumentar ou diminuir a intensidade ou alterar as outras opções de acordo com a sua preferência.
+</p>
+
+<p>
+E ao final desse passo a passo o resultado será como esse:
+</p>
+
+<img class='image-post' src="../../../img/12.jpg">
+
+</main>
+
+<!-- SISTEMA DE COMENTÁRIO DISQUS -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<footer>
+	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
+</footer>
+
+</div>
+</body>
+</html>
