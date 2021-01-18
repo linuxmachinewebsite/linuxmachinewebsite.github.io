@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Aprenda a programar em Shell em 10 minutos</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="Jefferson Carneiro"/>
+	<meta name="description" content="">
+	<meta name="keywords" content="Linux Machine, Aprenda a programar em Shell em 10 minutos, linux, terminal, shell, shell script, programação, programar">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="../../../img/linuxmachine.png">
+	<link rel="stylesheet" type="text/css" href="../../../estilo.css">
+</head>
+<body>
+<div class="box-article">
+
+<main>
+	<a href="/">Voltar</a>
+		<h1>Aprenda a programar em Shell em 10 minutos</h1>
+	   <div class="descricao-postagem">
+	      Por <b><a href="https://www.youtube.com/slackjeff" target='_blank'>Jefferson Carneiro</b></a> em <time><i>18 de janeiro de 2021</i></time>
+      </div>
+<hr>
+
+<!--
+   ABAIXO VOCÊ DEVE INICIAR A POSTAGEM!
+-->
+
+<p>
+A programação em Shell script sem dúvida é muito requisitada se você pretende trabalhar na área, aonde envolve distribuições GNU/Linux ou se apenas pretende usar alguma distribuição GNU/Linux
+no dia a dia.
+Cedo ou tarde, por mais que você usuário comum deseja escapar do terminal terá que usar! Seja para resolver um problema, automatizar alguma tarefa.
+</p>
+
+<p>
+Vamos aprender hoje uma sintaxe básica para você começar a programar em Shell facilmente.
+</p>
+
+
+<h2>Preparo</h2>
+
+<p>
+Antes de começar crie um arquivo de texto simples intitulado: <b>exemplo.sh</b> sabemos que no Linux a extensão NÃO importa muito, mas nesse caso é interessante utilizar a extensão ".sh" para que os editores de textos interpretem que aquele arquivo é um script em Shell. Feito isso abra o seu editor favorito e começamos.
+</p>
+
+<h2>Shebang</h2>
+
+<p>
+A primeira coisa a se fazer ao criar um script é inserir a Shebang, a mesma servirá para dizer ao interpretador em nosso caso o Shell (bash) que tudo listado a baixo terá que ser interpretado com o shell que indicamos. Devemos por <u>sempre</u> a shebang na primeira LINHA do arquivo e não deve conter espaços entre os caracteres.<br>
+A sintaxe é: <b>#!/caminho/do/interpretador</b>
+</p>
+
+<p>
+A shebang em si é o conjunto de caracteres <b>#!</b>, o caminho do nosso interpretador bash fica em: <i>/bin/bash</i> ficando então: <b>#!/bin/bash</b>
+</p>
+
+<h2>Ecoando na tela e inserindo comandos</h2>
+
+<p>
+Vamos começar ecoando algo na tela com o comando echo. Pense o seguinte, você está em uma montanha GIGANTE e na porta de entrada da um berro "<b>OIIII</b>", o que irá acontecer? Retornará um eco correto? O comando echo faz o mesmo, ele ecoa pra você o que você escrever. faça o teste:
+</p>
+
+<pre>
+#!/bin/bash
+
+echo OI TUDO BEM?
+</pre>
+
+<p>
+Salve e feche o arquivo e execute o script no terminal, para isso utilize o comando bash <i>NomeDoScript</i>.
+</p>
+
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+OI TUDO BEM?
+</pre>
+
+<p>
+Vamos adicionar mais tempeiro ao nosso script? Que tal adicionar agora comandos que utilizamos no dia a dia? Vamos imprimir o que estamos fazendo, navegar para o diretório /etc, ver se realmente estamos lá, fazer uma listagem lá dentro, e sair do script.
+</p>
+
+<pre>
+#!/bin/bash
+
+echo Indo para o diretório /etc
+
+cd /etc
+pwd
+ls
+exit
+</pre>
+
+<p>
+Novamente salvamos e fechamos o editor e executamos no terminal:
+</p>
+
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+Indo para o diretório /etc
+/etc
+abrt			 initial-setup
+adjtime			 inittab
+aliases			 inputrc
+alsa			 iproute2
+asound.conf		 iscsi
+...
+</pre>
+
+<p>
+Legal! Aconteceu o mesmo que se você fizesse no terminal manualmente esses comandos. Então o shell imprimiu aonde estamos, foi até o diretório /etc, fez a listagem e forçamos o programa a sair com o comando exit. Podemos melhorar isso! Ao invés de passar fixamente aonde o script deverá ir poderiamos fazer uma entrada de dados! Basicamente o usuário decide aonde o script deve entrar e fazer a listagem.
+</p>
+
+<h2>Entrada de dados</h2>
+
+<p>
+Para fazer isso vamos usar o comando <b>read</b>, o comando read se encarrega de pegar a entrada de dados do usuário via teclado e adiciona em uma variável! Pense na variável como uma caixa aonde o que o usuário escrever ficará armazenado lá dentro temporariamente e adicionamos um nome ou identificação a esta caixa. Para fazer a chamada desta "<b>caixa</b>" utilizamos: o dolar na frente + o nome do identificador: $NomeDoIdentificador. Note que precisa ser junto mesmo $identificador
+</p>
+
+<pre>
+#!/bin/bash
+
+echo Escreva aonde você desejar ir:
+<b>read <i>diretorio</i></b>
+
+cd <b><i>$diretorio</i></b>
+pwd
+ls
+exit
+</pre>
+
+<p>
+E a saida será:
+</p>
+
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+Escreva aonde você desejar ir:
+/home
+/home
+slackjeff
+
+[slackjeff@fedora ~]$ bash exemplo.sh 
+Escreva aonde você desejar ir:
+/opt
+/opt
+VirtualBox
+</pre>
+
+<p>
+A partir de agora tudo que envolver textos vamos por entre aspas duplas ou simples! As aspas protegem a string. Basicamente as duplas "" protegem a string e expandem coisas do shell, as simples '' deixam o significado literal ou seja quase nada do shell é expandido! Teste no echo rapidamente no terminal, perceba que com aspas duplas a variável HOME será expandida.
+</p>
+
+<pre>
+[slackjeff@fedora ~]$ echo "Oi jeffe como vai você? Está é uma variável: <b>$HOME</b>"
+Oi jeffe como vai você? Está é uma variável: <b>/home/slackjeff</b>
+</pre>
+
+
+<p>Agora a mesma frase com aspas simples:</p>
+
+<pre>
+[slackjeff@fedora ~]$ echo 'Oi jeffe como vai você? Está é uma variável: <b>$HOME</b>'
+Oi jeffe como vai você? Está é uma variável: <b>$HOME</b>
+</pre>
+
+
+<p>
+Ok, agora que sabemos das aspas simples vamos fazer uma técnica para poucar comandos do shell. Ao invés de chamar o echo + read vamos usar somente o read para imprimir algo e capturar os dados do usuário! Para isso usamos a opção do comando read <b>-p</b>. Vamos fazer agora no mesmo script um formulário e imprimir:
+</p>
+
+
+<pre>
+#!/bin/bash
+
+read -p "Qual seu nome: "       nome
+read -p "Qual sua idade: "      idade
+read -p "Qual seu cpf: "        cpf
+read -p "Qual sua localidade: " localidade
+
+echo "O seu nome é:  $nome"
+echo "A sua idade é: $idade"
+echo "O seu cpf é:   $cpf"
+echo "Você mora em:  $localidade"
+</pre>
+
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+Qual seu nome: Jefferson
+Qual sua idade: 30
+Qual seu cpf: xx0xxxx-xxxx1
+Qual sua localidade: Curitiba
+...
+O seu nome é:  Jefferson
+A sua idade é: 30
+O seu cpf é:   xx0xxxx-xxxx1
+Você mora em:  Curitiba
+</pre>
+
+
+<h2>Condicional</h2>
+
+<p>
+Ok, agora sabemos como fazer captura de dados e fazer nossos scripts ser interativos! Mas supondo que queremos fazer um formulario de uma balada aonde menore de 18 anos não podem entrar! Nosso script não tem o preparo para fazer esta verificação correto?
+</p>
+
+<p>
+Para isto vamos usar as condicionais! Basicamente precisamos verificar se a idade é menor que 18 anos, se for menor que 18 anos o script deve lançar uma mensagem e sair... Podemos fazer uma condicional com o comando test! O comando teste se encarrega de fazer várias verificações como: se é menor, se é maior, se e igual, se o diretório existe, se o arquivo tem permissão de execução etc... etc...
+</p>
+
+<p>
+São várias possibilidades! a sintaxe do comando test é simples [[ "CONDICIONAL ]] note que precisa ter espaços entre os colchetes, se você por desta forma: [["condicional ]] ou [[ "Condicional]] haverá um erro no script e é bem chatinho identificar. Vamos usar a opção <b>-lt</b> no comando teste <i>less then</i> ou em português <b>menor que</b>.
+</p>
+
+<p>
+Para ficar ainda mais legal vamos aliar o comando test com o bloco if then else fi. Eles encarregaram de ver qual o status de saída do comando test e fazer a condicional...
+</p>
+
+<pre>
+#!/bin/bash
+
+echo "!!! Balada do Jeffe pancadão !!!"
+read -p "Qual seu nome: "  nome
+read -p "Qual sua idade: " idade
+
+<b>if</b> <b>[[</b> "$idade" <b>-lt</b> "18" <b>]]</b>
+<b>then</b>
+    echo "Voçê não tem idade suficiente... Tchau."
+    exit 1
+<b>else</b>
+    echo "Registrando no banco de dados..."
+    echo "O NOME é: $nome a IDADE é: $idade"
+<b>fi</b>
+</pre>
+
+<p>
+Neste primeiro exemplo o nosso convidado tem apenas 17 anos! Deverá ser barrado.
+</p>
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+!!! Balada do Jeffe pancadão !!!
+Qual seu nome: Jefferson
+Qual sua idade: <b>17</b>
+Você não tem idade suficiente... Tchau.
+</pre>
+
+
+<p>
+Nosso convidado tem idade suficiente, deverá passar e registrar os dados no banco de dados imaginário.
+</p>
+<pre>
+[slackjeff@fedora ~]$ bash exemplo.sh 
+!!! Balada do Jeffe pancadão !!!
+Qual seu nome: Jefferson
+Qual sua idade: <b>19</b>
+Registrando no banco de dados...
+O NOME é: Jefferson a IDADE é: 19
+</pre>
+
+
+<p>
+Supondo agora que a casa mudou a rotina! Apenas pessoas entre 18 e 30 anos pode entrar na casa! Menores que 18 anos e maiores que 30 anos não podem. Vamos então usar mais duas opção do comando test o <b>-lt</b> (less then) menor que e o <b>-gt</b> (greater then) maior que. Nosso código deverá ficar:
+</p>
+
+<pre>
+#!/bin/bash
+
+echo "!!! Balada do Jeffe pancadão !!!"
+read -p "Qual seu nome: "  nome
+read -p "Qual sua idade: " idade
+
+if [[ "$idade" <b>-lt</b> "18" ]] <b>||</b> [[ "$idade" <b>-gt</b> "30" ]]
+then
+    echo "Voçê não tem idade suficiente... Tchau."
+    exit 1
+else
+    echo "Registrando no banco de dados..."
+    echo "O NOME é: $nome a IDADE é: $idade"
+fi
+
+</pre>
+
+
+<p>
+Espero que você percebeu que usamox uma outra opção do bash! o <b>||</b> mais especifico nesta linha de código:<br>
+if [[ "$idade" <b>-lt</b> "18" ]] <b>||</b> [[ "$idade" <b>-gt</b> "30" ]]
+</p>
+
+<p>
+Esta opção do bash está falando no portugol assim, ei bash!!!!! se a idade fo menor que 18 <b>OU</b> a idade for maior que 30 então caia nesta opção. E é isso, deixe seu comentário para a saga continuar e de 10 minutos de artigo virar 20 minutos ;)
+</p>
+
+
+</main>
+
+<!-- SISTEMA DE COMENTÁRIO DISQUS -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://linux-machine.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<footer>
+	♥ Html+Css+Bash por: <a href="https://slackjeff.com.br">slackjeff</a>. Copyright © 2020
+</footer>
+
+</div>
+</body>
+</html>
