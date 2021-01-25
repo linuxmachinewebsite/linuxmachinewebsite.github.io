@@ -35,7 +35,7 @@ pre{background-color: #e5e5e5; color: black; padding-left:1%; padding-right: 1%;
 #artigos>ul>li{margin-bottom: 2%; list-style-type: square;}
 
 /* Box Artigos */
-.box-article{max-width: 60em; margin-left: auto; margin-right: auto; text-align: justify;}
+.box-article{max-width: 60em; margin-left: auto; margin-right: auto; text-align: justify; padding-left: 4%; padding-right: 4%;}
 .image-post{max-width: 100%; margin-top: 1%; margin-bottom: 1%;}
 
 /* Rodapé */

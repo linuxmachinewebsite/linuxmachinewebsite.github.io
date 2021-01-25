@@ -6,6 +6,12 @@
 <description>Seja uma máquina em aprender GNU/Linux! Artigos/Dicas/Tutoriais/Notícias.</description>
 <!--artigo-->
 <item>
+<title>Benchmark de quatro distribuições GNU/Linux</title>
+<link>https://linuxmachine.org/post/2021/01/benchmark-distribucoes-linux.html</link>
+<pubDate>Sun Jan 24 00:18:57 -03 2021</pubDate>
+<description>Benchmark de quatro distribuições linux!</description>
+</item>
+<item>
 <title>Aprenda a programar em Shell em 10 minutos</title>
 <link>https://linuxmachine.org/post/2021/01/aprenda-programacao-em-shell-em-10-minutos.html</link>
 <pubDate>seg 18 jan 2021 12:16:52 -03</pubDate>
